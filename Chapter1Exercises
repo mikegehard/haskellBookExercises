@@ -1,0 +1,53 @@
+Chapt one exercises
+
+Combinators
+
+1. Combinator
+2. Not combinator
+3. Combinator
+4. combinator
+5. Not combinator
+
+Normal form or diverge
+
+1. Normal form
+2. (Lz.zz)(Ly.yy)
+
+(Ly.yy)(Ly.yy)
+
+Diverge
+
+3. Normal form
+
+Beta reduce
+
+1.
+
+(Labc.cba)zz(Lwv.w)
+(La.Lb.Lc.cba)(z)(z)(Lw.Lv.w)
+(Lb.Lc.cbz)(z)(Lw.Lv.w)
+(Lc.czz)(Lw.Lv.w)
+(Lw.Lv.w)(z)(z)
+(Lv.z)(z)
+z
+
+2.
+(Lx.Ly.xyy)(La.a)(b)
+(Ly.(La.a)yy)(b)
+(La.a)(b)b
+bb
+
+3.
+(Ly.y)(Lx.xx)(Lz.zq)
+(Lx.xx)(Lz.zq)
+(Lz.zq)(Lz.zq)
+(Lz.zq)(q)
+qq
+
+4.
+
+(Lz.z)(Lz.zz)(Lz.zy)
+(Lz.zz)(Lz.zy)
+(Lz.zy)(Lz.zy)
+(Lz.zy)(y)
+yy
