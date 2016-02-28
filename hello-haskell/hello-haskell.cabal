@@ -2,7 +2,7 @@
 -- documentation, see http://haskell.org/cabal/users-guide/
 
 -- The name of the package.
-name:                hello-haskell
+name:                hello
 
 -- The package version.  See the Haskell package versioning policy (PVP) 
 -- for standards guiding when and how versions should be incremented.
@@ -45,6 +45,13 @@ build-type:          Simple
 -- Constraint on the version of Cabal needed to build this package.
 cabal-version:       >=1.10
 
+library
+  exposed-modules:     Hello
+  ghc-options:         -Wall
+  hs-source-dirs:      src
+  build-depends:       base >=4.8 && <4.9
+  default-language:    Haskell2010
+
 
 executable hello-haskell
   -- .hs or .lhs file containing the Main module.
@@ -58,6 +65,7 @@ executable hello-haskell
   
   -- Other library packages from which modules are imported.
   build-depends:       base >=4.8 && <4.9
+                       , hello
   
   -- Directories containing source files.
   hs-source-dirs:      src
