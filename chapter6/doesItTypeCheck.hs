@@ -118,4 +118,4 @@ module DoesItTypeCheck where
   chk fn a b = fn a == b
 
   arith :: Num b => (a -> b) -> Integer -> a -> b
-  arith fn int a = fn a
+  arith fn int a = fn a + fromInteger int
