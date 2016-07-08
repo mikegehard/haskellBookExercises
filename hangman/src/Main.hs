@@ -1,11 +1,11 @@
 module Main where
 
-import Control.Monad (forever)
-import Data.Char (toLower)
-import Data.Maybe (isJust)
-import Data.List (intersperse, nub)
-import System.Exit (exitSuccess)
-import System.Random (randomRIO)
+import           Control.Monad (forever)
+import           Data.Char     (toLower)
+import           Data.List     (intersperse, nub)
+import           Data.Maybe    (isJust)
+import           System.Exit   (exitSuccess)
+import           System.Random (randomRIO)
 
 main :: IO ()
 main = do
@@ -51,15 +51,15 @@ instance Show Puzzle where
         ++ guessed
 
 freshPuzzle :: String -> Puzzle
-freshPuzzle word = Puzzle word (map (\x -> Nothing) word) []
+freshPuzzle word = Puzzle word (map (const Nothing) word) []
 
 charInWord :: Puzzle -> Char -> Bool
 charInWord (Puzzle word _ _) c =
-    elem c word
+    c `elem` word
 
 alreadyGuessed :: Puzzle -> Char -> Bool
 alreadyGuessed (Puzzle _ _ guessed) c =
-    elem c guessed
+    c `elem` guessed
 
 renderPuzzleChar :: Maybe Char -> Char
 renderPuzzleChar Nothing = '_'
@@ -104,7 +104,7 @@ gameOver p@(Puzzle word _ _) =
 
 tooManyGuesses :: Puzzle -> Bool
 tooManyGuesses (Puzzle _ filledInSoFar guessed) =
-    (length guessed) - (length uniqueFilledIn) > 7
+    length guessed - length uniqueFilledIn > 7
     where
         filledIn = filter isJust filledInSoFar
         uniqueFilledIn = nub filledIn
