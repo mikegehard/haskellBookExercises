@@ -22,8 +22,8 @@ module LetsWriteCode where
 
   foldBoolGuard :: a -> a -> Bool -> a
   foldBoolGuard x y bool
-    | bool == False = y
-    | bool == True = x
+    | not bool = y
+    | bool = x
 
   g :: (a -> b) -> (a, c) -> (b, c)
   g fn (a, c) = (fn a, c)
